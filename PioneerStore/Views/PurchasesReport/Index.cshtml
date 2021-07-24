@@ -1,0 +1,99 @@
+﻿@model IEnumerable<PioneerStore.Models.Purchases_Bills>
+
+@{
+    ViewBag.Title = "PurReport";
+}
+
+
+
+@using (Html.BeginForm("Index", "PurchasesReport", FormMethod.Post))
+{
+    <div class="card">
+        <div class="card-header">
+            <h2 style="text-align:center; color:indianred">Purchases Report</h2>
+        </div>
+        <div class="card-body">
+            <div class="form-group" id="FristForm" style="padding-top:22px">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <Label>Date From</Label>
+                        @Html.Editor("Date1", new { htmlAttributes = new { @class = "form-control ", @type = "date" } })
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        @Html.Label("Date To")
+                        @Html.Editor("Date2", new { htmlAttributes = new { @class = "form-control ", @type = "date" } })
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        @Html.Label("Search")
+                        <input type="submit" class="form-control btn-success" value="Search" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+}
+@if (Model != null && Model.Count() > 0)
+{
+<div class="card" style="margin:20px 0px 20px 0px">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead style="background-color: #6f2d91; color:white;">
+                <tr>
+                    <th style="color: white;">
+                        @Html.DisplayName("Bill Number")
+                    </th>
+                    <th style="color: white;">
+                        @Html.DisplayName("Date")
+                    </th>
+                    <th style="color: white;">
+                        @Html.DisplayName("Total")
+                    </th>
+                    <th style="color: white;">
+                        @Html.DisplayName("Piad")
+                    </th>
+                    <th style="color: white;">
+                        @Html.DisplayName("Remaning")
+                    </th>
+                    <th style="color: white;">
+                        @Html.DisplayName("Supplier Name")
+                    </th>
+                    <th style="color: white;">Print</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BillNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BillDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Total)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Payed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Remain)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Supplier.Name)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("طباعه", "PrintSalarySlip", new { id = item.ID })
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+    
+    
+}

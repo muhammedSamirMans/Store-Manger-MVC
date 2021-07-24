@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a21984e19d264f9fa18671413f57e0d2" Name="Diagram1" ZoomLevel="139">
+        <EntityTypeShape EntityType="StoreDBModel.Category" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreDBModel.Unit" Width="1.5" PointX="0.875" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="StoreDBModel.FK__Categorie__MainU__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreDBModel.FK__Categorie__SubUi__3A81B327" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="StoreDBModel.CategoriesQuantity" Width="1.5" PointX="4.875" PointY="1" />
+        <EntityTypeShape EntityType="StoreDBModel.Store" Width="1.5" PointX="6.875" PointY="1" />
+        <AssociationConnector Association="StoreDBModel.FK__Categorie__ItemI__3F466844" />
+        <AssociationConnector Association="StoreDBModel.FK__Categorie__Store__403A8C7D" />
+        <EntityTypeShape EntityType="StoreDBModel.Supplier" Width="1.5" PointX="0.75" PointY="8.125" />
+        <EntityTypeShape EntityType="StoreDBModel.Purchases_Bills" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="StoreDBModel.Purchases_Bills_Details" Width="1.5" PointX="3" PointY="4.75" />
+        <AssociationConnector Association="StoreDBModel.FK__Purchases__ItemI__49C3F6B7" />
+        <AssociationConnector Association="StoreDBModel.FK__Purchases__BillI__47DBAE45" />
+        <AssociationConnector Association="StoreDBModel.FK__Purchases__Suppl__44FF419A" />
+        <AssociationConnector Association="StoreDBModel.FK__Purchases__Store__48CFD27E" />
+        <EntityTypeShape EntityType="StoreDBModel.Client" Width="1.5" PointX="9.5" PointY="8.25" />
+        <EntityTypeShape EntityType="StoreDBModel.Sales_Bills" Width="1.5" PointX="8.875" PointY="4.625" />
+        <EntityTypeShape EntityType="StoreDBModel.Sales_Bills_Details" Width="1.5" PointX="6.5" PointY="4.5" />
+        <AssociationConnector Association="StoreDBModel.FK__Sales_Bil__ItemI__6383C8BA" />
+        <AssociationConnector Association="StoreDBModel.FK__Sales_Bil__Clien__5EBF139D" />
+        <AssociationConnector Association="StoreDBModel.FK__Sales_Bil__BillI__619B8048" />
+        <AssociationConnector Association="StoreDBModel.FK__Sales_Bil__Store__628FA481" />
+        <EntityTypeShape EntityType="StoreDBModel.sysdiagram" Width="1.5" PointX="3.375" PointY="8.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

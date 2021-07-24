@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PioneerStore.Models.Store>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="card">
+    <div class="card-header">
+        <h1 style="text-align:center; color:indianred">Manage Stores</h1>
+        <a href="Stores/Create">
+            <i class="fa fa-plus">Add New</i>
+        </a>
+    </div>
+    <div class="card-body">
+        <div class="table table-hover table-bordered table-responsive">
+            <table class="table">
+                <thead style="background-color: #dde4eb;">
+                    <tr>
+                        <td style=" border-color: rgb(40 167 69 / 25%);">
+                            @Html.DisplayNameFor(model => model.Store_Name)
+                        </td>
+                        <td style=" border-color: rgb(40 167 69 / 25%);">
+                            @Html.DisplayNameFor(model => model.Store_Address)
+                        </td>
+                        <td style=" border-color: rgb(40 167 69 / 25%);">
+                            @Html.DisplayNameFor(model => model.Storekeeper)
+                        </td>
+                        <td style=" border-color: rgb(40 167 69 / 25%);"></td>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Store_Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Store_Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Storekeeper)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) <i class="fa fa-pencil-square-o"></i>
+                            @*@Html.ActionLink("Details", "Details", new { id=item.ID }) |*@
+                            @*@Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

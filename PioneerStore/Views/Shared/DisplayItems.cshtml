@@ -1,0 +1,8 @@
+﻿
+@if(ViewBag.itemsList != null)
+{
+    foreach(var item in ViewBag.itemsList)
+    {
+        <option value="@item.Value">@item.Text</option>
+    }
+}

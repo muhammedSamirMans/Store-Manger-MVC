@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "Purechases Bills";
+}
+
+<div class="card">
+    <div class="card-body">
+        @*This is the frist part on page it contian the bill info(Bill number , Date of Bill , Supplier) all in form-group*@
+        <div class="form-group" id="FristForm" style="padding-top:22px">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    @*@Html.Label("Bill Number")
+                    <input id="BillNumber" class="form-control " type="number" />*@
+
+                    <h2 style=" text-align:center; color:indianred;">Purechases Bills</h2>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    @*@Html.Label("Date")
+                    @Html.Editor("Date", new { htmlAttributes = new { @class = "form-control ",@type="date", @id = "Date" } })*@
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    @Html.Label("Supplier")
+                    @Html.DropDownList("Suppliers", ViewBag.Suppliers as SelectList, new { @class = "form-control", @id = "Supplier" })
+                </div>
+            </div>
+        </div>
+        <div class="card" style="background-color:burlywood;">
+            <div class="card-body" style=" background: #212529; color: floralwhite;">
+                @*Then here we got the second part which contain the items input info(bill for which store ,the Item , Unit of the Item)thay all will added to down table when press add button*@
+                <div class="form-group" style="padding-top:22px">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            @Html.Label("Store")
+                            @Html.DropDownList("Store", ViewBag.Stores as SelectList, new { @class = "form-control", @id = "StoreName" })
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            @Html.Label("Item")
+                            @Html.DropDownList("Item", new SelectList(""), new { @class = "form-control", @id = "ItemName" })
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            @Html.Label("Unit")
+                            @Html.DropDownList("Unit", new SelectList(""), new { @class = "form-control", @id = "UnitName" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" id="Form1" style="padding-top:22px">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            @Html.Label("Quantity")
+                            <input id="Quantity" class="form-control " type="number" />
+                            @*@Html.Editor("Quantity", new { htmlAttributes = new { @class = "form-control", @id = "Quantity" } })*@
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            @Html.Label("Purchases Price")
+                            <input id="Price" class="form-control " type="number" />
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            @Html.Label("ADD")
+                            <input type="submit" id="btnAdd" value="Add" class="form-control btn-primary" />
+                        </div>
+                    </div>
+                </div>
+                @*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*@
+                @*The table that will contain then all needed data of the added items in the bill and we can add or remove items form it before clicking save button*@
+                <div class="table-responsive">
+                    <table id="tblSkills" cellpadding="0" cellspacing="0" class="table table-responsive">
+                        <thead style="color: #fbfbfb; background: #6f2d91; ">
+                            <tr>
+                                <th style="width:100px">Store ID</th>
+                                <th style="width:100px">Item ID</th>
+                                <th style="width:100px">Quantity</th>
+                                <th style="width:100px">Price</th>
+                                <th style="width:100px">Added Tax</th>
+                                <th style="width:100px">Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody style="background: white;">
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+                </div>
+                @*Here are the remain bill info that will be clacutated depending on previous table data(total,Payed ,remain)*@
+                <div class="form-group" style="padding-top:22px">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            @Html.Label("Total")
+                            <p id="TTotal"></p>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            @Html.Label("Payed")
+                            <input id="Payed" class="form-control " type="number" />
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            @Html.Label("Remaining")
+                            <p id="Remaining"></p>
+                        </div>
+                    </div>
+                </div>
+                <input type="button" id="btnSave" value="Save" class="form-control bnt btn-block btn-success" />
+            </div>
+    </div>
+        @*This is the begining of the daynamic client part alot of fun down keep your mind open ^_^*@
+        <br />
+        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="~/Scripts/jquery-3.3.1.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+        <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+        <script type="text/javascript" src="https://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+        <script type="text/javascript" src="~/Scripts/Pur.js"></script>

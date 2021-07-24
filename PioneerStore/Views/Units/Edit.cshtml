@@ -1,0 +1,85 @@
+﻿@model PioneerStore.Models.Unit
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="card">
+        <div class="card-body">
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4 class="card-title" style="text-align:center; color:indianred">Edit Unit</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.ID)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.UnitName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.UnitName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UnitName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.UnitType, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(unit => unit.UnitType, new List<SelectListItem>
+                            {
+                                  new SelectListItem { Text = "Main Unit", Value = "1", Selected=true},
+                                  new SelectListItem { Text = "Sub Unit", Value = "2"}
+                            }, new { @id = "SelectedItem", @class = "form-control", @onChange = "myFunction()" })
+                        @Html.ValidationMessageFor(model => model.UnitType, "", new { @class = "text-danger " })
+
+                    </div>
+                </div>
+                <div class="form-group" id="toggleGroup" style="display:none">
+                    @Html.LabelFor(model => model.Precent, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Precent, new { htmlAttributes = new { @id = "demo", @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Precent, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-success" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+
+        </div>
+    </div>
+   
+}
+
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script>
+    $(document).ready(function () { 
+        var x = document.getElementById("SelectedItem").value;
+        if (x == 2) { document.getElementById("toggleGroup").style.display = 'initial'; }
+
+        })
+    function myFunction() {
+        var x = document.getElementById("SelectedItem").value;
+        document.getElementById("demo").innerHTML = x;
+        if (x == 1) {
+            document.getElementById("toggleGroup").style.display = 'none';
+        }
+        else {
+            document.getElementById("toggleGroup").style.display = 'initial';
+        }
+        }
+        
+</script>

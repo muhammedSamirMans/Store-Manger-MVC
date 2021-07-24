@@ -1,0 +1,52 @@
+﻿@model IEnumerable<PioneerStore.Models.Client>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="card">
+    <div class="card-header">
+        <h1 style="text-align:center; color:indianred">Manage Clients</h1>
+        <a href="Clients/Create">
+            <i class="fa fa-plus">Add New</i>
+        </a>
+    </div>
+    <div class="card-body">
+        <div class="table table-hover table-bordered table-responsive">
+            <table class="table">
+                <thead style="background-color: #dde4eb;">
+                    <tr>
+                        <td style=" border-color: rgb(40 167 69 / 25%);">
+                            @Html.DisplayNameFor(model => model.Name)
+                        </td>
+                        <td style=" border-color: rgb(40 167 69 / 25%);">
+                            @Html.DisplayNameFor(model => model.Phone)
+                        </td>
+                        <thd style=" border-color: rgb(40 167 69 / 25%);">
+                            @Html.DisplayNameFor(model => model.Address)
+                            </td >
+                            <td style=" border-color: rgb(40 167 69 / 25%);">Actions</td>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                            @*@Html.ActionLink("Details", "Details", new { id=item.ID })*@
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

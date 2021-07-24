@@ -1,0 +1,431 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @*<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - Pioneer</title>
+        <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />*@
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title - SM</title>
+    <!-- plugins:css -->
+    <link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+   @*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
+    <link rel="stylesheet" href="~/Content/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/Content/assets/vendors/iconfonts/ionicons/css/ionicons.css">
+    <link rel="stylesheet" href="~/Content/assets/vendors/iconfonts/typicons/src/font/typicons.css">
+    <link rel="stylesheet" href="~/Content/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="~/Content/assets/vendors/iconfonts/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/Content/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="~/Content/assets/vendors/css/vendor.bundle.addons.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="~/Content/assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="~/Content/assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="~/Content/assets/images/favicon.png" />
+</head>
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row" style=" background: #212529 !important;">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center" style=" background: #212529 !important;" >
+                <a class="navbar-brand brand-logo" href="#">
+                    <span style=" background-color: #6f2d91; border-radius: 4px; padding: 0px 12px 3px 15px; margin: 7px 4px 8px 0px;">Store</span> Manager
+                </a>
+                <a class="navbar-brand brand-logo-mini" href="#">
+                    <span style=" background-color: #6f2d91; border-radius: 4px; padding: 3px 10px 3px 15px; margin: 0px -3px 0px 1px;">S</span> M
+                </a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item font-weight-semibold d-none d-lg-block" style="color:whitesmoke;">Help : +20 101 973 3532</li>
+                    <li class="nav-item dropdown language-dropdown">
+                        <a class="nav-link dropdown-toggle px-2 d-flex align-items-center" id="LanguageDropdown" href="#" data-toggle="dropdown" aria-expanded="false" style="color:whitesmoke;">
+                            <div class="d-inline-flex mr-0 mr-md-3">
+                                <div class="flag-icon-holder">
+                                    <i class="flag-icon flag-icon-us"></i>
+                                </div>
+                            </div>
+                            <span class="profile-text font-weight-medium d-none d-md-block" style="color:whitesmoke;">English</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-left navbar-dropdown py-2" aria-labelledby="LanguageDropdown">
+                            <a class="dropdown-item">
+                                <div class="flag-icon-holder">
+                                    <i class="flag-icon flag-icon-us"></i>
+                                </div>English
+                            </a>
+                            <a class="dropdown-item">
+                                <div class="flag-icon-holder">
+                                    <i class="flag-icon flag-icon-fr"></i>
+                                </div>French
+                            </a>
+                            <a class="dropdown-item">
+                                <div class="flag-icon-holder">
+                                    <i class="flag-icon flag-icon-ae"></i>
+                                </div>Arabic
+                            </a>
+                            <a class="dropdown-item">
+                                <div class="flag-icon-holder">
+                                    <i class="flag-icon flag-icon-ru"></i>
+                                </div>Russian
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="ml-auto search-form d-none d-md-block" action="#">
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search Here">
+                    </div>
+                </form>
+                @*<ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link count-indicator" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                            <i class="mdi mdi-bell-outline"></i>
+                            <span class="count">7</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
+                            <a class="dropdown-item py-3">
+                                <p class="mb-0 font-weight-medium float-left">You have 7 unread mails </p>
+                                <span class="badge badge-pill badge-primary float-right">View all</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <img src="~/Content/assets/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                                </div>
+                                <div class="preview-item-content flex-grow py-2">
+                                    <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
+                                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <img src="~/Content/assets/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                                </div>
+                                <div class="preview-item-content flex-grow py-2">
+                                    <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
+                                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <img src="~/Content/assets/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                                </div>
+                                <div class="preview-item-content flex-grow py-2">
+                                    <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
+                                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-toggle="dropdown">
+                            <i class="mdi mdi-email-outline"></i>
+                            <span class="count bg-success">3</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
+                            <a class="dropdown-item py-3 border-bottom">
+                                <p class="mb-0 font-weight-medium float-left">You have 4 new notifications </p>
+                                <span class="badge badge-pill badge-primary float-right">View all</span>
+                            </a>
+                            <a class="dropdown-item preview-item py-3">
+                                <div class="preview-thumbnail">
+                                    <i class="mdi mdi-alert m-auto text-primary"></i>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject font-weight-normal text-dark mb-1">Application Error</h6>
+                                    <p class="font-weight-light small-text mb-0"> Just now </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item py-3">
+                                <div class="preview-thumbnail">
+                                    <i class="mdi mdi-settings m-auto text-primary"></i>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject font-weight-normal text-dark mb-1">Settings</h6>
+                                    <p class="font-weight-light small-text mb-0"> Private message </p>
+                                </div>
+                            </a>
+                            <a class="dropdown-item preview-item py-3">
+                                <div class="preview-thumbnail">
+                                    <i class="mdi mdi-airballoon m-auto text-primary"></i>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject font-weight-normal text-dark mb-1">New user registration</h6>
+                                    <p class="font-weight-light small-text mb-0"> 2 days ago </p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
+                        <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                            <img class="img-xs rounded-circle" src="~/Content/assets/images/faces/face8.jpg" alt="Profile image">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                            <div class="dropdown-header text-center">
+                                <img class="img-md rounded-circle" src="~/Content/assets/images/faces/face8.jpg" alt="Profile image">
+                                <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
+                                <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
+                            </div>
+                            <a class="dropdown-item">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
+                            <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
+                            <a class="dropdown-item">Activity<i class="dropdown-item-icon ti-location-arrow"></i></a>
+                            <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
+                            <a class="dropdown-item">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
+                        </div>
+                    </li>
+                </ul>*@
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" style="color:wheat;" type="button" data-toggle="offcanvas">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background: linear-gradient(to top, #495057, #212529) !important">
+                <ul class="nav">
+                    @*<li class="nav-item nav-profile">
+                        <a href="#" class="nav-link">
+                            <div class="profile-image">
+                                <img class="img-xs rounded-circle" src="~/Content/assets/images/faces/face8.jpg" alt="profile image">
+                                <div class="dot-indicator bg-success"></div>
+                            </div>
+                            <div class="text-wrapper">
+                                <p class="profile-name">Allen Moreno</p>
+                                <p class="designation">Premium user</p>
+                            </div>
+                        </a>
+                    </li>*@
+                    <li class="nav-item nav-category">Main Menu</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Home">
+                            <i class="menu-icon typcn typcn-document-text"></i>
+                            <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                    @*<li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Basic UI Elements</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="pages/forms/basic_elements.html">
+                <i class="menu-icon typcn typcn-shopping-bag"></i>
+                <span class="menu-title">Form elements</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="pages/charts/chartjs.html">
+                <i class="menu-icon typcn typcn-th-large-outline"></i>
+                <span class="menu-title">Charts</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="pages/tables/basic-table.html">
+                <i class="menu-icon typcn typcn-bell"></i>
+                <span class="menu-title">Tables</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="pages/icons/font-awesome.html">
+                <i class="menu-icon typcn typcn-user-outline"></i>
+                <span class="menu-title">Icons</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                <i class="menu-icon typcn typcn-document-add"></i>
+                <span class="menu-title">User Pages</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/samples/login.html"> Login </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/samples/register.html"> Register </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/samples/error-404.html"> 404 </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/samples/error-500.html"> 500 </a>
+                    </li>
+                </ul>
+            </div>
+        </li>*@
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://localhost:44327/Units">
+                            <i class="menu-icon typcn typcn-user-outline"></i>
+                            <span class="menu-title">Units</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://localhost:44327/Categories">
+                            <i class="menu-icon typcn typcn-user-outline"></i>
+                            <span class="menu-title">Categories</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://localhost:44327/CategoriesQuantities">
+                            <i class="menu-icon typcn typcn-user-outline"></i>
+                            <span class="menu-title">CategoriesQuantities</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://localhost:44327/Stores">
+                            <i class="menu-icon typcn typcn-user-outline"></i>
+                            <span class="menu-title" >Stores</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://localhost:44327/Suppliers">
+                            <i class="menu-icon typcn typcn-user-outline"></i>
+                            <span class="menu-title">Suppliers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://localhost:44327/Clients">
+                            <i class="menu-icon typcn typcn-user-outline"></i>
+                            <span class="menu-title">Clients</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://localhost:44327/Purchases">
+                            <i class="menu-icon typcn typcn-user-outline"></i>
+                            <span class="menu-title">Purchases</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://localhost:44327/Sales">
+                            <i class="menu-icon typcn typcn-user-outline"></i>
+                            <span class="menu-title">Sales</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://localhost:44327/SalesReport">
+                            <i class="menu-icon typcn typcn-user-outline"></i>
+                            <span class="menu-title">SalesReport</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://localhost:44327/PurchasesReport">
+                            <i class="menu-icon typcn typcn-user-outline"></i>
+                            <span class="menu-title">PurchasesReport</span>
+                        </a>
+                    </li>
+                    @*<li class="nav-item">
+                        @Html.ActionLink("تقرير مشتريات", "Index", "PurchasesReport", new { @class = "nav-link" })
+                    </li>*@
+                </ul>
+            </nav>
+            @*<div class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            @Html.ActionLink("Pioneer Store", "Index", "Sales", new { area = "" }, new { @class = "navbar-brand" })
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li>@Html.ActionLink("الوحدات", "Index", "Units")</li>
+                                <li>@Html.ActionLink("الاصناف", "Index", "Categories")</li>
+                                <li>@Html.ActionLink("الكميات بالمخازن", "Index", "CategoriesQuantities")</li>
+                                <li>@Html.ActionLink("المخازن", "Index", "Stores")</li>
+                                <li>@Html.ActionLink("الموردين", "Index", "Suppliers")</li>
+                                <li>@Html.ActionLink("العملاء", "Index", "Clients")</li>
+                                <li>@Html.ActionLink("فواتير الشراء", "Index", "Purchases")</li>
+                                <li>@Html.ActionLink("فواتير البيع", "Index", "Sales")</li>
+                                <li>@Html.ActionLink("تقرير مبيعات", "Index", "SalesReport")</li>
+                                <li>@Html.ActionLink("تقرير مشتريات", "Index", "PurchasesReport")</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>*@
+
+
+            @*<div class="container body-content">*@
+            <div class="main-panel">
+                <div class="content-wrapper" style=" background: #495057;">
+                    @RenderBody()
+
+                    @*<hr />
+                                <footer>
+                                    <p>&copy; @DateTime.Now.Year - Mansour ^_^</p>
+                                </footer>
+                            </div>
+
+                            <script src="~/Scripts/jquery-3.3.1.js"></script>
+                            <script src="~/Scripts/moment.js"></script>
+                            <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+                            <script src="~/Scripts/bootstrap.js"></script>
+                            <script src="~/Scripts/Site.js"></script>
+                        </body>
+                        </html>*@
+                </div>
+                <footer class="footer">
+                    <div class="container-fluid clearfix">
+                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © @DateTime.Now.Year @*<a href="https://pioneers-solutions.com/" target="_blank">Pioneer</a>*@. All rights reserved.</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                            Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i>
+                        </span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="~/Content/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/Content/assets/vendors/js/vendor.bundle.addons.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="~/Content/assets/js/shared/off-canvas.js"></script>
+    <script src="~/Content/assets/js/shared/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="~/Content/assets/js/demo_1/dashboard.js"></script>
+    <!-- End custom js for this page-->
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/Site.js"></script>
+</body>
+</html>

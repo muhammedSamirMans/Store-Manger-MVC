@@ -1,0 +1,65 @@
+﻿@model IEnumerable<PioneerStore.Models.Unit>
+
+@{
+    ViewBag.Title = "Units";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h2 style="        color: indianred;text-align:center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        flood-opacity: inherit;
+        font-weight: bolder;">Units</h2>
+        <a href="Units/Create">
+            <i class="fa fa-plus"> Add New</i>
+        </a>
+    </div>
+    <div class="card-body">
+
+       
+        <div class="table table-hover table-bordered table-responsive">
+            <table class="table">
+                <thead style="background-color: #dde4eb;">
+                    <tr>
+                        <td style=" border-color: rgb(40 167 69 / 25%);">
+
+                            @Html.DisplayNameFor(model => model.UnitName)
+                        </td>
+                        <td style=" border-color: rgb(40 167 69 / 25%);">
+                            @Html.DisplayNameFor(model => model.UnitType)
+                        </td>
+                        <td style="border-color: rgb(40 167 69 / 25%);">
+                            @Html.DisplayNameFor(model => model.Precent)
+                        </td>
+                        <td style="border-color: rgb(40 167 69 / 25%);">
+                            Actions
+                        </td>
+                    </tr>
+                </thead>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UnitName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UnitType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Precent)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID })<i class="fa fa-pencil-square-o"></i> @*|
+                            @Html.ActionLink("Details", "Details", new { id=item.ID })*@ @*|
+                            @Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
